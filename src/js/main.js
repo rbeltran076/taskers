@@ -140,6 +140,12 @@ function setupIpcHandlers() {
       promptManagerWindow.webContents.send('button-data', currentPrompts);
     }
   });
+  
+  // Add handler for get-prompts request from renderer
+  ipcMain.on('get-prompts', (event) => {
+    console.log('Received get-prompts request from renderer');
+    event.sender.send('receive-prompts', currentPrompts);
+  });
 
   // Handle button updates from the prompt manager
   ipcMain.on('update-buttons', (event, prompts) => {

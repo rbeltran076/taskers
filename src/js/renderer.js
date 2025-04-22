@@ -12,18 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // State variables
   let selectedPrompt = null;
-  let prompts = [
-    { title: 'Button 1', content: 'This is the content for Button 1' },
-    { title: 'Button 2', content: 'This is the content for Button 2' },
-    { title: 'Button 3', content: 'This is the content for Button 3' },
-    { title: 'Button 4', content: 'This is the content for Button 4' },
-    { title: 'Button 5', content: 'This is the content for Button 5' }
-  ];
+  let prompts = []; // Start with an empty array
   
   // Initialize
-  renderButtons();
-  updateButtonListeners();
   loadThemePreference();
+  
+  // Request prompts from main process
+  console.log('Requesting prompts from main process');
+  ipcRenderer.send('get-prompts');
+  
+  // Listen for prompts from main process
+  ipcRenderer.on('receive-prompts', (event, loadedPrompts) => {
+    console.log('Received prompts from main process:', loadedPrompts);
+    prompts = loadedPrompts;
+    renderButtons();
+    updateButtonListeners();
+  });
   
   // Function to render buttons
   function renderButtons() {
