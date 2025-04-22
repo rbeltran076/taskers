@@ -1,0 +1,279 @@
+/* Theme Variables */
+:root {
+  /* New Color Palette */
+  --isabelline: #F2EDEB;
+  --steel-blue: #457EAC;
+  --steel-blue-hover: #3a6b93;
+  --steel-blue-active: #2f577a;
+  --gunmetal: #16262E;
+  --gunmetal-light: #243842;
+  
+  /* Light Theme Variables */
+  --bg-color: var(--isabelline);
+  --container-bg: #ffffff;
+  --text-color: var(--gunmetal);
+  --border-color: #cccccc;
+  --button-bg: var(--steel-blue);
+  --button-hover: var(--steel-blue-hover);
+  --button-active: var(--steel-blue-active);
+  --button-text: #ffffff;
+  --secondary-button-bg: #f1f1f1;
+  --secondary-button-border: #cccccc;
+  --secondary-button-hover: #e1e1e1;
+  --display-bg: #ffffff;
+  --display-border: #cccccc;
+  --panel-border: #cccccc;
+  --divider-color: #eeeeee;
+}
+
+.dark-theme {
+  /* Dark Theme Variables */
+  --bg-color: var(--gunmetal);
+  --container-bg: var(--gunmetal-light);
+  --text-color: var(--isabelline);
+  --border-color: #505050;
+  --button-bg: var(--steel-blue);
+  --button-hover: var(--steel-blue-hover);
+  --button-active: var(--steel-blue-active);
+  --button-text: #ffffff;
+  --secondary-button-bg: #2a3942;
+  --secondary-button-border: #505050;
+  --secondary-button-hover: #384854;
+  --display-bg: #1c2f39;
+  --display-border: #364b57;
+  --panel-border: #364b57;
+  --divider-color: #243842;
+}
+
+/* Modern sans-serif font import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 900px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: var(--container-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.app-layout {
+  display: flex;
+  height: 100%;
+  gap: 20px;
+}
+
+.left-panel {
+  flex: 1;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+}
+
+.right-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prompt-button {
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  position: relative;
+}
+
+.prompt-button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-button:active {
+  background-color: var(--button-active);
+  transform: translateY(0);
+}
+
+.prompt-button.selected {
+  background-color: var(--button-active);
+  font-weight: 600;
+}
+
+.text-display {
+  flex-grow: 1;
+  border: 1px solid var(--display-border);
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 12px;
+  min-height: 200px;
+  white-space: pre-wrap;
+  background-color: var(--display-bg);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  font-size: 15px;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+.button-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--divider-color);
+  transition: all 0.3s ease;
+}
+
+.manage-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+#manage-prompts-button {
+  padding: 8px 16px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+#manage-prompts-button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background-color: var(--secondary-button-bg);
+  color: var(--text-color);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--secondary-button-hover);
+  transform: translateY(-1px);
+}
+
+.copy-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#copy-button {
+  padding: 8px 16px;
+  background-color: var(--secondary-button-bg);
+  border: 1px solid var(--secondary-button-border);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+#copy-button:hover {
+  background-color: var(--secondary-button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: relative;
+}
+
+.tooltip:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  background-color: var(--gunmetal);
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.tooltip:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Success message */
+.success-message {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  font-weight: 500;
+}
+
+.success-message.show {
+  display: block;
+  animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  15% { opacity: 1; transform: translateY(0); }
+  85% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}

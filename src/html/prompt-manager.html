@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Prompts</title>
+  <link rel="stylesheet" href="../css/prompt-manager.css">
+</head>
+<body class="light-theme">
+  <div class="container">
+    <h2>Manage Prompts</h2>
+    
+    <div class="prompt-list" id="prompt-list">
+      <!-- Prompt items will be added here dynamically -->
+    </div>
+    
+    <div class="prompt-edit">
+      <div class="input-group">
+        <label for="prompt-title">Title (shown on button):</label>
+        <input type="text" class="prompt-title" id="prompt-title" placeholder="Enter prompt title">
+      </div>
+      
+      <div class="input-group">
+        <label for="prompt-text">Prompt Text:</label>
+        <textarea class="prompt-text" id="prompt-text" placeholder="Enter prompt text" rows="5"></textarea>
+      </div>
+    </div>
+    
+    <div class="button-row">
+      <div class="action-buttons">
+        <button id="add-button" class="primary-button">Add New</button>
+        <button id="update-button" class="primary-button">Update</button>
+        <button id="delete-button" class="danger-button">Delete</button>
+      </div>
+      <button id="save-button" class="secondary-button">Save & Close</button>
+    </div>
+  </div>
+  
+  <script src="../js/prompt-manager.js"></script>
+</body>
+</html> 

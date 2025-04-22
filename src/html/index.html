@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Prompt Selector</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+</head>
+<body class="light-theme">
+  <div id="success-message" class="success-message">Prompt copied to clipboard!</div>
+  <div class="container">
+    <div class="app-layout">
+      <div class="left-panel">
+        <div class="button-container" id="button-container">
+          <!-- Buttons will be generated dynamically -->
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="text-display" id="text-display">
+          Select a prompt to display its text here.
+        </div>
+        <div class="button-controls">
+          <div class="manage-buttons">
+            <button id="manage-prompts-button" class="tooltip" data-tooltip="Manage your prompts (Ctrl+M)">
+              <i class="ri-settings-4-line" style="margin-right: 5px;"></i> Manage Prompts
+            </button>
+            <button id="dark-mode-toggle" class="theme-toggle tooltip" data-tooltip="Toggle dark mode (Ctrl+D)">🌓</button>
+          </div>
+          <div class="copy-button-container">
+            <button id="copy-button" class="tooltip" data-tooltip="Copy to clipboard (Ctrl+C)">
+              <i class="ri-clipboard-line" style="margin-right: 5px;"></i> Copy
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/renderer.js"></script>
+</body>
+</html>
