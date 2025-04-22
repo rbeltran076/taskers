@@ -1,8 +1,12 @@
-# Prompt Selector
+# Taskers
+
+A productivity tool suite with various utilities to enhance your workflow. Currently featuring a prompt selector sub-project.
+
+## Prompt Selector (Current Sub-Project)
 
 A simple desktop app for storing and quickly accessing text snippets and prompts. Great for anyone who regularly reuses text templates.
 
-## Features
+### Features
 
 - Store prompts in one place and copy them with a single click
 - Add, edit, and delete your prompts
@@ -10,7 +14,7 @@ A simple desktop app for storing and quickly accessing text snippets and prompts
 - Keyboard shortcuts for faster usage
 - Desktop shortcut integration
 
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
 | Shortcut   | Action                  |
 | ---------- | ----------------------- |
@@ -21,7 +25,7 @@ A simple desktop app for storing and quickly accessing text snippets and prompts
 ## Project Structure
 
 ```
-prompt-selector/
+taskers/
 ├── src/
 │   ├── css/         # Styles
 │   ├── js/          # App logic
@@ -41,8 +45,8 @@ prompt-selector/
 
    ```
    # Clone the repo
-   git clone https://github.com/yourusername/prompt-selector.git
-   cd prompt-selector
+   git clone https://github.com/rbeltran076/taskers.git
+   cd taskers
 
    # Install dependencies
    npm install
@@ -56,4 +60,8 @@ prompt-selector/
    npm run make-desktop-shortcut
    ```
 
-That's it! The app stores your prompts in your user data folder. Click "Manage Prompts" to add new ones.
+That's it! The prompt selector stores your prompts in your user data folder. Click "Manage Prompts" to add new ones.
+
+## Future Modules
+
+Additional productivity tools will be added to the Taskers suite in future updates.
